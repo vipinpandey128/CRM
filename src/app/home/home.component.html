@@ -1,0 +1,236 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="card shadow p-3 mb-5 bg-white rounded">
+        <div class="card-header">
+          Customer Contract
+        </div>
+        <div class="card-body">
+          <form class="needs-validation" novalidate>
+            <div class="form-row">
+              <div class="col-md-3 mb-3">
+                <label class="mr-sm-2" for="Customer">Customer</label>
+                <select class="custom-select mr-sm-2" id="Customer">
+                  <option selected>Select Customer</option>
+                  <option *ngFor="let item of welcome6.contractCustomer" [value]="item.Customer" >{{item.Customer}}</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" placeholder="Name" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="mr-sm-2" for="SentName">Sent By</label>
+                <select class="custom-select mr-sm-2" id="SentName">
+                  <option selected>Name</option>
+                  <option value="{{item.Name}}" *ngFor="let item of this.welcome10.Staff">{{item.Name}}</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="mr-sm-2" for="Status">Status</label>
+                <select class="custom-select mr-sm-2" id="Status">
+                  <option selected>Select Status</option>
+                  <option value="{{item.Status}}" *ngFor="let item of welcome1.AStatus">{{item.Description}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-3 mb-3">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control" id="Email" placeholder="Email" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="contact">Contact No</label>
+                <input type="text" class="form-control" id="contact" placeholder="Contact" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="mr-sm-2" for="fromdate">From Date</label>
+                <input type="text" class="form-control" id="fromdate" placeholder="From date" required>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="mr-sm-2" for="reviewdate">Review Date</label>
+                <input type="text" class="form-control" id="reviewdate" placeholder="Review date" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label class="mr-sm-2" for="comments">Review Date</label>
+                <textarea class="form-control" id="comments" placeholder="Comments" required></textarea>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="mr-sm-2" for="notes">Review Date</label>
+                <textarea class="form-control" id="notes" placeholder="notes" required></textarea>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="form-row">
+                <div class="col-md-2 mb-3">
+                  <select class="custom-select mr-sm-2" id="styledrop">
+                    <option selected>Select Style</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <input class="" type="radio" value="" id="invalidCheck3" required>
+                  <label class="" for="invalidCheck3">
+                    &nbsp;Apply To All
+                  </label>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <input class="" type="radio" value="" id="invalidCheck3" required>
+                  <label class="" for="invalidCheck3">
+                    &nbsp;Standard Size
+                  </label>
+                </div>
+                <div class="col-md-1 mb-3">
+                  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                  <label class="mr-sm-2" for="inlineFormCustomSelect">Uplift(0)%</label>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div class="input-group mb-12">
+                    <span class="" id="basic-addon1">Sales Price&nbsp;</span>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    <span class="" id="basic-addon1">&nbsp;(Std :£0:00)</span>
+                  </div>
+                </div>
+                <div class="col-md-1 mb-3">
+                  <span class="" id="basic-addon1">A/W Price: (Std : £0:00)</span>
+                </div>
+                <div class="col-md-1 mb-3">
+                  <span class="" id="basic-addon1">Margin:</span>
+                </div>
+              </div>
+              <div class="form-row text-right">
+                <div class="col-md-10 mb-3">
+                  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."> Save
+                  To Customer B2B Styles
+                </div>
+                <div class="col-md-2 mb-3">
+                  <button class="btn btn-primary" type="submit">Apply</button>
+                </div>
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+      <div class="card shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+          <form class="needs-validation" novalidate>
+            <div class="form-row">
+              <div class="col-md-3 mb-3">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Colour Desc</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option selected>Colour Desc</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Fitting</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option selected>Fitting</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="form-row">
+              <div class="col-md-2 mb-3"></div>
+              <div class="col-md-8 mb-3">
+                <table class="table table-border">
+                  <thead>
+                    <tr>
+                      <th scope="col">ST</th>
+                      <th scope="col">TC</th>
+                      <th scope="col">WEB/AC</th>
+                      <th scope="col">AC 01</th>
+                      <th scope="col">AC 02</th>
+                      <th scope="col">AC 03</th>
+                      <th scope="col">AC 04</th>
+                      <th scope="col">BL</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr> -->
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-2 mb-3"></div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-10 mb-3">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Qty1</th>
+                      <th scope="col">Desc1</th>
+                      <th scope="col">Margin1</th>
+                      <th scope="col">Qty2</th>
+                      <th scope="col">Desc2</th>
+                      <th scope="col">Margin2</th>
+                      <th scope="col">Qty3</th>
+                      <th scope="col">Desc3</th>
+                      <th scope="col">Margin3</th>
+                      <th scope="col">Qty4</th>
+                      <th scope="col">Desc4</th>
+                      <th scope="col">Margin4</th>
+                      <th scope="col">Tolerance</th>
+                      <th scope="col">#</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>Edit</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-12 text-right">
+                <div class="form-group mx-sm-3">
+                  <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                  &nbsp;
+                  <button type="button" class="btn btn-primary">Save</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
