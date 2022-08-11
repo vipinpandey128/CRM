@@ -12,14 +12,14 @@
             <div class="form-row">
               <div class="col-md-3 mb-3">
                 <label class="mr-sm-2" for="Customer">Customer</label>
-                <select class="custom-select mr-sm-2" formControlName="customer" (change)="ContractStyleList($event)">
+                <select class="custom-select mr-sm-2" formControlName="Customer" (change)="ContractStyleList($event)">
                   <option selected>Select Customer</option>
                   <option *ngFor="let item of contractCustomer" value="{{item.Customer}}">{{item.Customer}}</option>
                 </select>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="Name">Name</label>
-                <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                <input type="text" formControlName="Name" class="form-control" placeholder="Name">
               </div>
               <div class="col-md-3 mb-3">
                 <label class="mr-sm-2" for="SentName">Sent By</label>
@@ -63,27 +63,27 @@
                 <textarea class="form-control" formControlName="Comments" placeholder="Comments"></textarea>
               </div>
               <div class="col-md-6 mb-3">
-                <label class="mr-sm-2" for="notes">Notes</label>
-                <textarea class="form-control" formControlName="notes" placeholder="notes"></textarea>
+                <label class="mr-sm-2" for="Notes">Notes</label>
+                <textarea class="form-control" formControlName="Notes" placeholder="notes"></textarea>
               </div>
             </div>
             <div class="card-footer">
               <div class="form-row">
                 <div class="col-md-2 mb-3">
-                  <select class="custom-select mr-sm-2" id="styledrop" formControlName="Style">
+                  <select class="custom-select mr-sm-2" formControlName="Style">
                     <option selected>Select Style</option>
                     <option value="{{item.Style}}" *ngFor="let item of contractStyles">{{item.Style}}</option>
                   </select>
                 </div>
                 <div class="col-md-2 mb-3">
                   <input class="" type="radio" value="">
-                  <label class="" for="invalidCheck3">
+                  <label class="" >
                     &nbsp;Apply To All
                   </label>
                 </div>
                 <div class="col-md-2 mb-3">
                   <input class="" type="radio" value="">
-                  <label class="" for="invalidCheck3">
+                  <label class="" >
                     &nbsp;Standard Size
                   </label>
                 </div>
@@ -94,17 +94,17 @@
                 </div>
                 <div class="col-md-3 mb-3">
                   <div class="input-group mb-12">
-                    <span class="" id="basic-addon1">Sales Price&nbsp;</span>
-                    <input type="text" formControlName="Sales_Price" class="form-control" aria-label="Username"
-                      aria-describedby="basic-addon1">
-                    <span class="" id="basic-addon1">&nbsp;(Std :£0:00)</span>
+                    <span class="">Sales Price&nbsp;</span>
+                    <input type="text" formControlName="Sales_Price" class="form-control" aria-label="Sales_Price"
+                      aria-describedby="Sales_Price">
+                    <span class="">&nbsp;(Std :£0:00)</span>
                   </div>
                 </div>
                 <div class="col-md-1 mb-3">
-                  <span class="" id="basic-addon1">A/W Price: (Std : £0:00)</span>
+                  <span class="">A/W Price: (Std : £0:00)</span>
                 </div>
                 <div class="col-md-1 mb-3">
-                  <span class="" id="basic-addon1">Margin:</span>
+                  <span class="">Margin:</span>
                 </div>
               </div>
               <div class="form-row text-right">
@@ -160,16 +160,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr> -->
                   </tbody>
                 </table>
               </div>

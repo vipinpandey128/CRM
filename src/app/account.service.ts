@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { User } from './_model/user';
 import { environment } from 'src/environments/environment';
 
-
+const  apiUrl = 'http://adentrn.worksafeonline.co.uk/';
 @Injectable({ providedIn: 'root' })
 export class AccountService {
     private userSubject!: BehaviorSubject<User>;
@@ -24,8 +24,8 @@ export class AccountService {
     }
 
     login(formdata:any) {
-        console.log(formdata);
-        return this.http.post<User>(`${environment.apiUrl}/api/Token`, formdata)
+        console.log(apiUrl+"api/Token");
+        return this.http.post<User>(`${apiUrl}api/Token`, formdata)
             .pipe(map(user => {
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 return user;
