@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { JwtInterceptor } from './Jwt-Interceptor';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

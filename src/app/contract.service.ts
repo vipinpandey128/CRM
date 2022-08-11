@@ -17,35 +17,42 @@ export class ContractService {
   constructor(private http: HttpClient) { }
 
   ContractCustomerList() {
-    return this.http.get<Welcome6>(`${environment.apiUrl}/api/ContractCustomerList`)
+    return this.http.get<any>(`${environment.apiUrl}/api/ContractCustomerList`)
         .pipe(map(welcome6 => {
             return welcome6;
         }));
   }
 
   CustomerAddressList(customer:string) {
-    return this.http.get<Welcome3>(`${environment.apiUrl}/api/CustomerAddressList?Customer=${customer}`)
+    return this.http.get<any>(`${environment.apiUrl}/api/CustomerAddressList?Customer=${customer}`)
         .pipe(map(welcome3 => {
             return welcome3;
         }));
   }
 
   ContractStyleList(Customer:string,Address:string,ContractNo:number,Style:string) {
-    return this.http.get<Welcome4>(`${environment.apiUrl}/api/ContractStyleList?Customer=${Customer}&Address=${Address}&ContractNo=${ContractNo}&Style=${Style}`)
+    return this.http.get<any>(`${environment.apiUrl}/api/ContractStyleList?Customer=${Customer}&Address=${Address}&ContractNo=${ContractNo}&Style=${Style}`)
         .pipe(map(welcome4 => {
             return welcome4;
         }));
   }
 
   ActivityStaff() {
-    return this.http.get<Welcome10>(`${environment.apiUrl}/api/ActivityStaff`)
+    return this.http.get<any>(`${environment.apiUrl}/api/ActivityStaff`)
         .pipe(map(welcome4 => {
             return welcome4;
         }));
   }
 
   ActivityStatus() {
-    return this.http.get<Welcome1>(`${environment.apiUrl}/api/ActivityStatus`)
+    return this.http.get<any>(`${environment.apiUrl}/api/ActivityStatus`)
+        .pipe(map(welcome1 => {
+            return welcome1;
+        }));
+  }
+
+  SaveData(ContractStyle:any) {
+    return this.http.post<any>(`${environment.apiUrl}/api/SaveContractStyle`, ContractStyle)
         .pipe(map(welcome1 => {
             return welcome1;
         }));

@@ -1,101 +1,102 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-10">
-      <div class="card shadow p-3 mb-5 bg-white rounded">
-        <div class="card-header">
-          Customer Contract
-        </div>
-        <div class="card-body">
-          <form class="needs-validation" novalidate>
+<form class="needs-validation" [formGroup]="form" (submit)="submit()" novalidate>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+          <div class="card-header">
+            Customer Contract
+          </div>
+          <div class="card-body">
+
             <div class="form-row">
               <div class="col-md-3 mb-3">
                 <label class="mr-sm-2" for="Customer">Customer</label>
-                <select class="custom-select mr-sm-2" id="Customer">
+                <select class="custom-select mr-sm-2" formControlName="customer" (change)="ContractStyleList($event)">
                   <option selected>Select Customer</option>
-                  <option *ngFor="let item of welcome6.contractCustomer" [value]="item.Customer" >{{item.Customer}}</option>
+                  <option *ngFor="let item of contractCustomer" value="{{item.Customer}}">{{item.Customer}}</option>
                 </select>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="Name">Name</label>
-                <input type="text" class="form-control" id="Name" placeholder="Name" required>
+                <input type="text" formControlName="name" class="form-control" placeholder="Name">
               </div>
               <div class="col-md-3 mb-3">
                 <label class="mr-sm-2" for="SentName">Sent By</label>
-                <select class="custom-select mr-sm-2" id="SentName">
+                <select class="custom-select mr-sm-2" formControlName="SentBy">
                   <option selected>Name</option>
-                  <option value="{{item.Name}}" *ngFor="let item of this.welcome10.Staff">{{item.Name}}</option>
+                  <option value="{{item.Name}}" *ngFor="let item of staff">{{item.Name}}</option>
                 </select>
               </div>
               <div class="col-md-3 mb-3">
                 <label class="mr-sm-2" for="Status">Status</label>
-                <select class="custom-select mr-sm-2" id="Status">
+                <select class="custom-select mr-sm-2" formControlName="Status">
                   <option selected>Select Status</option>
-                  <option value="{{item.Status}}" *ngFor="let item of welcome1.AStatus">{{item.Description}}</option>
+                  <option value="{{item.Status}}" *ngFor="let item of aStatus">{{item.Description}}</option>
                 </select>
               </div>
             </div>
             <div class="form-row">
               <div class="col-md-3 mb-3">
                 <label for="Email">Email</label>
-                <input type="text" class="form-control" id="Email" placeholder="Email" required>
+                <input type="text" class="form-control" formControlName="Email" placeholder="Email">
               </div>
               <div class="col-md-3 mb-3">
                 <label for="contact">Contact No</label>
-                <input type="text" class="form-control" id="contact" placeholder="Contact" required>
+                <input type="text" class="form-control" formControlName="ContractNo" placeholder="Contact">
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label class="mr-sm-2" for="fromdate">From Date</label>
-                <input type="text" class="form-control" id="fromdate" placeholder="From date" required>
+                <input type="text" class="form-control" name="Date_From" formControlName="Date_From" placeholder="From date">
               </div>
               <div class="col-md-3 mb-3">
                 <label class="mr-sm-2" for="reviewdate">Review Date</label>
-                <input type="text" class="form-control" id="reviewdate" placeholder="Review date" required>
+                <input type="text" class="form-control" name="Date_To" formControlName="Date_To" placeholder="Review date">
               </div>
             </div>
             <div class="form-row">
               <div class="col-md-6 mb-3">
-                <label class="mr-sm-2" for="comments">Review Date</label>
-                <textarea class="form-control" id="comments" placeholder="Comments" required></textarea>
+                <label class="mr-sm-2" for="comments">Comments</label>
+                <textarea class="form-control" formControlName="Comments" placeholder="Comments"></textarea>
               </div>
               <div class="col-md-6 mb-3">
-                <label class="mr-sm-2" for="notes">Review Date</label>
-                <textarea class="form-control" id="notes" placeholder="notes" required></textarea>
+                <label class="mr-sm-2" for="notes">Notes</label>
+                <textarea class="form-control" formControlName="notes" placeholder="notes"></textarea>
               </div>
             </div>
             <div class="card-footer">
               <div class="form-row">
                 <div class="col-md-2 mb-3">
-                  <select class="custom-select mr-sm-2" id="styledrop">
+                  <select class="custom-select mr-sm-2" id="styledrop" formControlName="Style">
                     <option selected>Select Style</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="{{item.Style}}" *ngFor="let item of contractStyles">{{item.Style}}</option>
                   </select>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input class="" type="radio" value="" id="invalidCheck3" required>
+                  <input class="" type="radio" value="">
                   <label class="" for="invalidCheck3">
                     &nbsp;Apply To All
                   </label>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <input class="" type="radio" value="" id="invalidCheck3" required>
+                  <input class="" type="radio" value="">
                   <label class="" for="invalidCheck3">
                     &nbsp;Standard Size
                   </label>
                 </div>
                 <div class="col-md-1 mb-3">
-                  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                  <input class="form-check-input" formControlName="UpliftApply" type="checkbox" value=""
+                    aria-label="...">
                   <label class="mr-sm-2" for="inlineFormCustomSelect">Uplift(0)%</label>
                 </div>
                 <div class="col-md-3 mb-3">
                   <div class="input-group mb-12">
                     <span class="" id="basic-addon1">Sales Price&nbsp;</span>
-                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" formControlName="Sales_Price" class="form-control" aria-label="Username"
+                      aria-describedby="basic-addon1">
                     <span class="" id="basic-addon1">&nbsp;(Std :£0:00)</span>
                   </div>
                 </div>
@@ -108,22 +109,19 @@
               </div>
               <div class="form-row text-right">
                 <div class="col-md-10 mb-3">
-                  <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."> Save
+                  <input class="form-check-input" type="checkbox" value="" aria-label="..."> Save
                   To Customer B2B Styles
                 </div>
                 <div class="col-md-2 mb-3">
-                  <button class="btn btn-primary" type="submit">Apply</button>
+                  <button class="btn btn-primary" type="button">Apply</button>
                 </div>
               </div>
             </div>
-
-
-          </form>
+          </div>
         </div>
-      </div>
-      <div class="card shadow p-3 mb-5 bg-white rounded">
-        <div class="card-body">
-          <form class="needs-validation" novalidate>
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+
             <div class="form-row">
               <div class="col-md-3 mb-3">
                 <label class="mr-sm-2" for="inlineFormCustomSelect">Colour Desc</label>
@@ -218,19 +216,27 @@
                   </tbody>
                 </table>
               </div>
+              <div class="col-md-1 mb-3">
+
+              </div>
+              <div class="col-md-1 mb-3">
+                <input class="form-check-input" type="checkbox" id="Bulk_Apply" formControlName="Bulk_Apply"
+                  aria-label="...">
+                Bulk Apply
+              </div>
             </div>
             <div class="form-row">
               <div class="col-md-12 text-right">
                 <div class="form-group mx-sm-3">
-                  <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                  <button type="button" class="btn btn-outline-secondary">Cancel</button>
                   &nbsp;
-                  <button type="button" class="btn btn-primary">Save</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</form>
